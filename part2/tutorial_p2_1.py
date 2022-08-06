@@ -3,18 +3,23 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 
 
 class MainWindow(QMainWindow):
-
     def __init__(self):
-        super(MainWindow, self).__init__()
+        super().__init__()
 
         self.setWindowTitle("My App")
 
         button = QPushButton("Press Me!")
-        button.setCheckable(True)
+        button.setCheckable(True)  # Keeps the button pressed if True
         button.clicked.connect(self.the_button_was_clicked)
 
-app = QApplication(sys.argv)
+        # Set the central widget of the Window.
+        self.setCentralWidget(button)
 
+    def the_button_was_clicked(self):
+        print("Clicked!")
+
+# Launch app
+app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
 

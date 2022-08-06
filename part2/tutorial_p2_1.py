@@ -5,10 +5,11 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.ventana = QMainWindow()
 
         self.button_is_checked = True
 
-        self.setWindowTitle("My App")
+        self.ventana.setWindowTitle("My App")
 
         self.button = QPushButton("Press Me!")
         self.button.setCheckable(True)
@@ -17,8 +18,9 @@ class MainWindow(QMainWindow):
         self.button.setText("aaaaaah vamos!")
         texto = self.button.text()
         print(texto)
-        self.windowTitleChanged.connect(self.titulocambiado)
-        self.setCentralWidget(self.button)
+        self.ventana.windowTitleChanged.connect(self.titulocambiado)
+        self.ventana.setCentralWidget(self.button)
+        self.ventana.show()
 
     def titulocambiado(self):
         print(" El título cambió!")
@@ -29,7 +31,7 @@ class MainWindow(QMainWindow):
 
         print(self.button_is_checked)
 
-        self.setWindowTitle("Cambió!")
+        self.ventana.setWindowTitle("Cambió!")
 
 
 # Launch app

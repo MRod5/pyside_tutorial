@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (
     QSpinBox,
     QTimeEdit,
     QVBoxLayout,
-    QWidget,
+    QWidget
 )
 
 
@@ -54,17 +54,26 @@ class MainWindow(QMainWindow):
 
         for w in widgets:
             layout.addWidget(w())
+        self.labelo = QLabel("HOLA")
+        self.labelo.setPixmap(Qt.QPixmap('widgets2.jpg'))
 
+
+        layout.addWidget(self.labelo)
         widget = QWidget()
         widget.setLayout(layout)
+
 
         # Set the central widget of the Window. Widget will expand
         # to take up all the space in the window by default.
         self.setCentralWidget(widget)
-
+        font = self.labelo.font()
+        font.setPointSize(50)
+        font.setStyleName("Times")
+        self.labelo.setFont(font)
+        self.labelo.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
 
 app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
 
-app.exec_()
+app.exec()

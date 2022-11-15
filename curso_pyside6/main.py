@@ -11,11 +11,18 @@ from qt_core import *
 
 from gui.windows.main_window.ui_main_window import *
 
-# Ventana principàañ
+# Ventana principal
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        
+        # Carga de la configuración
+        self.ui = UI_MainWindow()
+        self.ui.setup_ui(self)
+
+        # Visuliza ventana
         self.show()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -13,6 +13,24 @@ class UI_MainWindow(object):
 
             # Widget central
             self.central_frame = QFrame()
-            self.central_frame.setStyleSheet("background-color: #282a36")
 
+            # Layout principal
+            self.main_layout = QHBoxLayout(self.central_frame)
+            self.main_layout.setContentsMargins(0,0,0,0)
+            self.main_layout.setSpacing(0)
+
+            # Contenido
+            self.content = QFrame()
+            self.content.setStyleSheet("background-color: #282a36")
+
+            # Menú izquierdo
+            self.left_menu = QFrame()
+            self.left_menu.setStyleSheet("background-color: #44475a")
+            self.left_menu.setMaximumWidth(50)
+
+            # Añade widgets
+            self.main_layout.addWidget(self.left_menu)
+            self.main_layout.addWidget(self.content)
+
+            # Widget central:
             parent.setCentralWidget(self.central_frame)

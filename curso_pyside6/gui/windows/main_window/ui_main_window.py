@@ -98,7 +98,21 @@ class UI_MainWindow(object):
             self.left_menu_top_frame = QFrame()
             self.left_menu_top_frame.setMinimumHeight(50)
             self.left_menu_top_frame.setStyleSheet("background-color: red")
-            
+
+            # Left menu top layout
+            self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
+            self.left_menu_top_layout.setContentsMargins(0,0,0,0)
+            self.left_menu_top_layout.setSpacing(0)
+
+            #Top btns
+            self.toggle_button = QPushButton("Toggle")
+            self.btn1 = QPushButton("1")
+            self.btn2 = QPushButton("2")
+
+            # Añade botones a layout izqdo superior
+            self.left_menu_top_layout.addWidget(self.toggle_button)
+            self.left_menu_top_layout.addWidget(self.btn1)
+            self.left_menu_top_layout.addWidget(self.btn2)
 
             # Left menu bottom frame
             self.left_menu_bottom_frame = QFrame()

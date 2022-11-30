@@ -97,7 +97,8 @@ class UI_MainWindow(object):
             # Left menu top frame
             self.left_menu_top_frame = QFrame()
             self.left_menu_top_frame.setMinimumHeight(50)
-            self.left_menu_top_frame.setStyleSheet("background-color: red")
+            self.left_menu_top_frame.setObjectName("left_menu_top_frame")
+            self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: red;}")
 
             # Left menu top layout
             self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
@@ -120,7 +121,8 @@ class UI_MainWindow(object):
             # Left menu bottom frame
             self.left_menu_bottom_frame = QFrame()
             self.left_menu_bottom_frame.setMinimumHeight(50)
-            self.left_menu_bottom_frame.setStyleSheet("background-color: red")
+            self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
+            self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: red; }")
             # Left menu bottom layout
             self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
             self.left_menu_bottom_layout.setContentsMargins(0,0,0,0)

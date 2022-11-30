@@ -89,6 +89,40 @@ class UI_MainWindow(object):
             self.left_menu.setMaximumWidth(50)
             self.left_menu.setMinimumWidth(50)
 
+            # Left menu layout
+            self.left_menu_layout = QVBoxLayout(self.left_menu)
+            self.left_menu_layout.setContentsMargins(0,0,0,0)
+            self.left_menu_layout.setSpacing(0)
+
+            # Left menu top frame
+            self.left_menu_top_frame = QFrame()
+            self.left_menu_top_frame.setMinimumHeight(50)
+            self.left_menu_top_frame.setStyleSheet("background-color: red")
+            
+
+            # Left menu bottom frame
+            self.left_menu_bottom_frame = QFrame()
+            self.left_menu_bottom_frame.setMinimumHeight(50)
+            self.left_menu_bottom_frame.setStyleSheet("background-color: red")
+
+            # Etiqueta menu izqdo abajo
+            self.left_menu_label_version = QLabel("version aqui")
+            self.left_menu_label_version.setAlignment(Qt.AlignCenter)
+            self.left_menu_label_version.setMinimumHeight(30)
+            self.left_menu_label_version.setMaximumHeight(30)
+            self.left_menu_label_version.setStyleSheet("color: #c3ccdf")
+
+            # Espaciador menu
+            self.left_menu_spacer = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+            # Añadir al layout zona izqda
+            self.left_menu_layout.addWidget(self.left_menu_top_frame)
+            self.left_menu_layout.addItem(self.left_menu_spacer)
+            self.left_menu_layout.addWidget(self.left_menu_bottom_frame)
+            self.left_menu_layout.addWidget(self.left_menu_label_version)
+
+
+
             # Añade widgets
             self.main_layout.addWidget(self.left_menu)
             self.main_layout.addWidget(self.content)

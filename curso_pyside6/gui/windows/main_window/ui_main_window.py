@@ -104,7 +104,7 @@ class UI_MainWindow(object):
             self.left_menu_top_layout.setContentsMargins(0,0,0,0)
             self.left_menu_top_layout.setSpacing(0)
 
-            #Top btns
+            #Top btns izqda
             self.toggle_button = QPushButton("Toggle")
             self.btn1 = QPushButton("1")
             self.btn2 = QPushButton("2")
@@ -114,10 +114,20 @@ class UI_MainWindow(object):
             self.left_menu_top_layout.addWidget(self.btn1)
             self.left_menu_top_layout.addWidget(self.btn2)
 
+            # boton de abajo izqd
+            self.botonabajo = QPushButton("Rueda")
+
             # Left menu bottom frame
             self.left_menu_bottom_frame = QFrame()
             self.left_menu_bottom_frame.setMinimumHeight(50)
             self.left_menu_bottom_frame.setStyleSheet("background-color: red")
+            # Left menu bottom layout
+            self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
+            self.left_menu_bottom_layout.setContentsMargins(0,0,0,0)
+            self.left_menu_bottom_layout.setSpacing(0)
+
+            # Añade botones a layout izqdo superior
+            self.left_menu_bottom_layout.addWidget(self.botonabajo)
 
             # Etiqueta menu izqdo abajo
             self.left_menu_label_version = QLabel("version aqui")

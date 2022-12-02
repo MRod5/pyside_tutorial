@@ -22,6 +22,9 @@ class MainWindow(QMainWindow):
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self)
 
+        # Animación toggle
+        self.ui.toggle_button.clicked.connect(self.toggle_barra)
+
         # Visuliza ventana
         self.show()
 
@@ -39,9 +42,10 @@ class MainWindow(QMainWindow):
 
         # Animación
         self.animacion = QPropertyAnimation(self.ui.left_menu, b"minimumWidth")
-        self.animation.setStartValue(menu_width)
+        self.animacion.setStartValue(menu_width)
         self.animacion.setEndValue(width)
         self.animacion.setDuration(500)
+        self.animacion.setEasingCurve(QEasingCurve.InOutCirc)
         self.animacion.start()
 
         self.ui.left_menu

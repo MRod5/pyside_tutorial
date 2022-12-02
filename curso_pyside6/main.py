@@ -26,6 +26,27 @@ class MainWindow(QMainWindow):
         self.show()
 
 
+    def toggle_barra(self):
+        """
+        """
+        # toma el ancho del menu
+        menu_width = self.ui.left_menu.width()
+
+        #Comprueba ancho
+        width = 50
+        if menu_width==50:
+            width = 240
+
+        # Animación
+        self.animacion = QPropertyAnimation(self.ui.left_menu, b"minimumWidth")
+        self.animation.setStartValue(menu_width)
+        self.animacion.setEndValue(width)
+        self.animacion.setDuration(500)
+        self.animacion.start()
+
+        self.ui.left_menu
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()

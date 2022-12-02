@@ -5,10 +5,12 @@ from gui.pages.ui_pages import Ui_application_pages
 # Ventana principal
 class UI_MainWindow(object):
     def setup_ui(self, parent):
+        # Si la ventana no ha sido editada:
         if not parent.objectName():
+            # Cambio del nombre del objeto main window
             parent.setObjectName("MainWindow")
 
-            # Atributos iniciales
+            ## Atributos iniciales
             parent.resize(1200, 720)
             parent.setMinimumSize(960,540)
 
@@ -20,19 +22,25 @@ class UI_MainWindow(object):
             self.main_layout.setContentsMargins(0,0,0,0)
             self.main_layout.setSpacing(0)
 
-            # Contenido
+            ## Contenido
             self.content = QFrame()
             self.content.setStyleSheet("background-color: #282a36")
+
+            # Content Layout
+            self.content_layout =QVBoxLayout(self.content)
+            self.content_layout.setContentsMargins(0,0,0,0)
+            self.content_layout.setSpacing(0)
             
-            # Barra superior
+            ## Barra superior
             self.top_bar = QFrame()
             self.top_bar.setMinimumHeight(30)
             self.top_bar.setMaximumHeight(30)
             self.top_bar.setStyleSheet("background-color: #21232d; color:#6272a4")
+
             self.top_bar_layout = QHBoxLayout(self.top_bar)
             self.top_bar_layout.setContentsMargins(10,0,20,0)
 
-             # Etiqueta izquierda
+            # Etiqueta izquierda
             self.top_label_left = QLabel("Aplicación de ejemplo con PySide6")
 
             # Top Spacer
@@ -43,14 +51,14 @@ class UI_MainWindow(object):
             self.top_label_right.setStyleSheet("font: 700 9pt 'SegoeUI'")
 
 
-            # Páginas de la aplicación
+            ## Páginas de la aplicación
             self.pages = QStackedWidget()
             self.pages.setStyleSheet("font-size: 12pt; color: #f8f8f2; background-color: #282a36")
             self.ui_pages = Ui_application_pages()
             self.ui_pages.setupUi(self.pages)
             self.pages.setCurrentWidget(self.ui_pages.page_1)
 
-            # Barra inferior
+            ## Barra inferior
             self.bottom_bar = QFrame()
             self.bottom_bar.setMinimumHeight(30)
             self.bottom_bar.setMaximumHeight(30)
@@ -78,12 +86,8 @@ class UI_MainWindow(object):
             self.top_bar_layout.addItem(self.top_spacer)
             self.top_bar_layout.addWidget(self.top_label_right)
             
-            # Content Layout
-            self.content_layout =QVBoxLayout(self.content)
-            self.content_layout.setContentsMargins(0,0,0,0)
-            self.content_layout.setSpacing(0)
 
-            # Menú izquierdo
+            ## Menú izquierdo
             self.left_menu = QFrame()
             self.left_menu.setStyleSheet("background-color: #44475a")
             self.left_menu.setMaximumWidth(50)
@@ -149,7 +153,9 @@ class UI_MainWindow(object):
 
 
 
-            # Añade widgets
+            ## Añade widgets
+
+            # Widgets en principal
             self.main_layout.addWidget(self.left_menu)
             self.main_layout.addWidget(self.content)
 
@@ -160,3 +166,6 @@ class UI_MainWindow(object):
 
             # Widget central:
             parent.setCentralWidget(self.central_frame)
+
+
+        return None

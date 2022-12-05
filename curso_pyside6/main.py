@@ -38,7 +38,7 @@ class MainWindow(QMainWindow):
         #Comprueba ancho
         width = 50
         if menu_width==50:
-            width = 240
+            width = 300
 
         # Animación
         self.animacion = QPropertyAnimation(self.ui.left_menu, b"minimumWidth")

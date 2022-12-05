@@ -11,7 +11,7 @@ class UI_MainWindow(object):
             parent.setObjectName("MainWindow")
 
             ## Atributos iniciales
-            parent.resize(1200, 720)
+            parent.resize(1600, 900)
             parent.setMinimumSize(960,540)
 
             # Widget central
@@ -102,7 +102,7 @@ class UI_MainWindow(object):
             self.left_menu_top_frame = QFrame()
             self.left_menu_top_frame.setMinimumHeight(50)
             self.left_menu_top_frame.setObjectName("left_menu_top_frame")
-            self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: red;}")
+            self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: #44475a;}")
 
             # Left menu top layout
             self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
@@ -126,7 +126,7 @@ class UI_MainWindow(object):
             self.left_menu_bottom_frame = QFrame()
             self.left_menu_bottom_frame.setMinimumHeight(50)
             self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
-            self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: red; }")
+            self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: #44475a; }")
             # Left menu bottom layout
             self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
             self.left_menu_bottom_layout.setContentsMargins(0,0,0,0)

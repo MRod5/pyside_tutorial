@@ -7,8 +7,8 @@ class PyPushButton(QPushButton):
 
     def __init__(
         self,
-        texto="",
-        height=40,
+        text="",
+        height=50,
         minimum_width=50,
         text_padding=55,
         text_color="#c3ccdf",
@@ -23,7 +23,7 @@ class PyPushButton(QPushButton):
         super().__init__()
 
         # Set default parametros
-        self.setText(texto)
+        self.setText(text)
         self.setMaximumHeight(height)
         self.setMinimumHeight(height)
         self.setCursor(Qt.PointingHandCursor)
@@ -40,40 +40,43 @@ class PyPushButton(QPushButton):
         self.is_active = is_active
 
         # Set style
-        self.set_style(
-            text_padding=self.text_padding,
-            text_color=self.text_color,
+        self.set_style_b(
+            text_padding = self.text_padding,
+            text_color = self.text_color,
             btn_color = self.btn_color,
-            btn_hover=self.btn_hover,
-            btn_pressed=self.btn_pressed,
-            is_active=self.is_active
-        )
+            btn_hover = self.btn_hover,
+            btn_pressed = self.btn_pressed,
+            is_active = self.is_active
+            )
+
+        return None
 
     
-    def set_style(self,
-        text_padding=55,
-        text_color="#c3ccdf",
-        btn_color="#44475a",
-        btn_hover="#4f5368",
-        btn_pressed="#282a36",
+    def set_style_b(
+        self,
+        text_padding = 55,
+        text_color = "#c3ccdf",
+        btn_color = "#44475a",
+        btn_hover = "#4f5368",
+        btn_pressed = "#282a36",
         is_active = False
         ):
         style = f"""
-        QPushbutton {{
+        QPushButton {{
             color: {text_color};
             background-color: {btn_color};
             padding-left: {text_padding}px;
-            text-aling: left;
+            text-align: left;
             border: none;
         }}
-        QPushbutton:hover {{
+        QPushButton:hover {{
             background-color: {btn_hover};
         }}
-        QPushbutton:pressed {{
+        QPushButton:pressed {{
             background-color: {btn_pressed};
         }}
         """
-
+        print('--',style)
         self.setStyleSheet(style)
 
         return None

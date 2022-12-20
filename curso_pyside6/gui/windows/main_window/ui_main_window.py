@@ -1,6 +1,7 @@
 # Qt Core
 from qt_core import *
 from gui.pages.ui_pages import Ui_application_pages
+from gui.widgets.py_push_button import PyPushButton
 
 # Ventana principal
 class UI_MainWindow(object):
@@ -89,7 +90,7 @@ class UI_MainWindow(object):
 
             ## Menú izquierdo
             self.left_menu = QFrame()
-            self.left_menu.setStyleSheet("background-color: #44475a")
+            self.left_menu.setStyleSheet("background-color: #123456")
             self.left_menu.setMaximumWidth(50)
             self.left_menu.setMinimumWidth(50)
 
@@ -102,7 +103,7 @@ class UI_MainWindow(object):
             self.left_menu_top_frame = QFrame()
             self.left_menu_top_frame.setMinimumHeight(50)
             self.left_menu_top_frame.setObjectName("left_menu_top_frame")
-            self.left_menu_top_frame.setStyleSheet("#left_menu_top_frame { background-color: #44475a;}")
+            self.left_menu_top_frame.setStyleSheet("background-color: #00225a")
 
             # Left menu top layout
             self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
@@ -110,9 +111,9 @@ class UI_MainWindow(object):
             self.left_menu_top_layout.setSpacing(0)
 
             #Top btns izqda
-            self.toggle_button = QPushButton("Toggle")
-            self.btn1 = QPushButton("1")
-            self.btn2 = QPushButton("2")
+            self.toggle_button = PyPushButton("Toggle")
+            self.btn1 = PyPushButton("1")
+            self.btn2 = PyPushButton("2")
 
             # Añade botones a layout izqdo superior
             self.left_menu_top_layout.addWidget(self.toggle_button)
@@ -126,7 +127,7 @@ class UI_MainWindow(object):
             self.left_menu_bottom_frame = QFrame()
             self.left_menu_bottom_frame.setMinimumHeight(50)
             self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
-            self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: #44475a; }")
+            self.left_menu_bottom_frame.setStyleSheet("#left_menu_bottom_frame {background-color: #AAAAAA}")
             # Left menu bottom layout
             self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
             self.left_menu_bottom_layout.setContentsMargins(0,0,0,0)
@@ -140,7 +141,7 @@ class UI_MainWindow(object):
             self.left_menu_label_version.setAlignment(Qt.AlignCenter)
             self.left_menu_label_version.setMinimumHeight(30)
             self.left_menu_label_version.setMaximumHeight(30)
-            self.left_menu_label_version.setStyleSheet("color: #c3ccdf")
+            self.left_menu_label_version.setStyleSheet("color: #c35500")
 
             # Espaciador menu
             self.left_menu_spacer = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)

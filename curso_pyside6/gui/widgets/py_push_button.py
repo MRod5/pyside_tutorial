@@ -10,7 +10,7 @@ class PyPushButton(QPushButton):
         texto="",
         height=40,
         minimum_width=50,
-        txt_padding=55,
+        text_padding=55,
         text_color="#c3ccdf",
         icon_path="",
         icon_color="#c3ccdf",
@@ -30,7 +30,7 @@ class PyPushButton(QPushButton):
 
         # Parametros customizados
         self.minimum_width = minimum_width
-        self.text_padding = txt_padding
+        self.text_padding = text_padding
         self.text_color = text_color
         self.icon_path = icon_path
         self.icon_color = icon_color
@@ -51,7 +51,7 @@ class PyPushButton(QPushButton):
 
     
     def set_style(self,
-        txt_padding=55,
+        text_padding=55,
         text_color="#c3ccdf",
         btn_color="#44475a",
         btn_hover="#4f5368",
@@ -62,7 +62,7 @@ class PyPushButton(QPushButton):
         QPushbutton {{
             color: {text_color};
             background-color: {btn_color};
-            padding-left: {txt_padding}px;
+            padding-left: {text_padding}px;
             text-aling: left;
             border: none;
         }}

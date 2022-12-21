@@ -112,11 +112,15 @@ class UI_MainWindow(object):
             self.left_menu_top_layout.setSpacing(0)
 
             #Top btns izqda
-            self.toggle_button = PyPushButton("Toggle")
-            self.btn1 = PyPushButton("1")
-            self.btn2 = PyPushButton("2")
-            self.btn3 = QPushButton("3")
-            self.btn3.setStyleSheet("background-color: #11bbcc")
+            self.toggle_button = PyPushButton(
+                text="Ocultar", is_active=False, btn_hover="#112233", btn_pressed="332211")
+            self.btn1 = PyPushButton(
+                text="Página 1", is_active=True)
+            self.btn2 = PyPushButton(
+                text="Página 2")
+            self.btn3 = PyPushButton(
+                text="Página 3")
+
 
             # Añade botones a layout izqdo superior
             self.left_menu_top_layout.addWidget(self.toggle_button)
@@ -125,7 +129,8 @@ class UI_MainWindow(object):
             self.left_menu_top_layout.addWidget(self.btn3)
 
             # boton de abajo izqd
-            self.botonabajo = QPushButton("Rueda")
+            self.botonabajo = PyPushButton(
+                text="Config")
 
             # Left menu bottom frame
             self.left_menu_bottom_frame = QFrame()

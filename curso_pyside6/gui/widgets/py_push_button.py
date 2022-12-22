@@ -91,3 +91,17 @@ class PyPushButton(QPushButton):
             self.setStyleSheet(style + active_style)
 
         return None
+
+    def paintEvent(self, event):
+        # Devuelve estilo por defecto
+        QPushButton.paintEvent(self,event)
+
+        #Painter
+        qp = QPainter()
+        qp.begin(self)
+        qp.setRenderHint(QPainter.Antialiasing)
+        qp.setPen(Qt.NoPen)
+
+        rect = QRect(0,0, self.minimum_width)
+
+        return None

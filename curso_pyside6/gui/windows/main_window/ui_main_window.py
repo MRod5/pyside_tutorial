@@ -91,7 +91,7 @@ class UI_MainWindow(object):
             ## Menú izquierdo
             self.left_menu = QFrame()
             self.left_menu.setObjectName("left_menu")
-            self.left_menu.setStyleSheet("#left_menu {background-color: #123123; }") # Verde oscuro
+            self.left_menu.setStyleSheet("#left_menu {background-color: #44475a; }") # Verde oscuro 123123
             self.left_menu.setMaximumWidth(50)
             self.left_menu.setMinimumWidth(50)
 
@@ -104,7 +104,7 @@ class UI_MainWindow(object):
             self.left_menu_top_frame = QFrame()
             self.left_menu_top_frame.setMinimumHeight(50)
             self.left_menu_top_frame.setObjectName("left_menu_top_frame")
-            self.left_menu_top_frame.setStyleSheet("background-color: #00225a") # Azul oscuro
+            #self.left_menu_top_frame.setStyleSheet("background-color: #00225a") # Azul oscuro
 
             # Left menu top layout
             self.left_menu_top_layout = QVBoxLayout(self.left_menu_top_frame)
@@ -113,11 +113,11 @@ class UI_MainWindow(object):
 
             #Top btns izqda
             self.toggle_button = PyPushButton(
-                text="Ocultar", is_active=False, btn_hover="#112233", btn_pressed="332211")
+                text="Ocultar", is_active=False, btn_hover="#112233", btn_pressed="332211", icon_path="icon_menu.svg", icon_color="#112233")
             self.btn1 = PyPushButton(
-                text="Página 1", is_active=True)
+                text="Página 1", is_active=True, icon_path="icon_home.svg")
             self.btn2 = PyPushButton(
-                text="Página 2")
+                text="Página 2", icon_path="icon_widgets.svg")
             self.btn3 = PyPushButton(
                 text="Página 3")
 
@@ -130,7 +130,7 @@ class UI_MainWindow(object):
 
             # boton de abajo izqd
             self.botonabajo = PyPushButton(
-                text="Config")
+                text="Config", icon_path="icon_settings.svg")
 
             # Left menu bottom frame
             self.left_menu_bottom_frame = QFrame()

@@ -25,9 +25,38 @@ class MainWindow(QMainWindow):
         # Animación toggle
         self.ui.toggle_button.clicked.connect(self.toggle_barra)
 
+        # Boton home
+        self.ui.btn1.clicked.connect(self.show_page_1)
+
+        # Boton p2
+        self.ui.btn2.clicked.connect(self.show_page_2)
+
+        # Boton p3
+        self.ui.btn3.clicked.connect(self.show_page_3)
+
         # Visuliza ventana
         self.show()
 
+
+    def show_page_1(self):
+        """
+        """
+        print("clickado HOME")
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_1)
+
+
+    def show_page_2(self):
+        """
+        """
+        print("clickado 2")
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_2)
+
+
+    def show_page_3(self):
+        """
+        """
+        print("clickado 3")
+        self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_3)
 
     def toggle_barra(self):
         """

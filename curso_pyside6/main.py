@@ -38,25 +38,40 @@ class MainWindow(QMainWindow):
         self.show()
 
 
+    def reset_selection(self):
+        for btn in self.ui.left_menu.findChildren(PyPushButton):
+            try:
+                btn.set_active(False)
+            except:
+                pass
+        return None
+
+
     def show_page_1(self):
         """
         """
         print("clickado HOME")
+        self.reset_selection()
         self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_1)
+        self.ui.btn1.set_active(True)
 
 
     def show_page_2(self):
         """
         """
         print("clickado 2")
+        self.reset_selection()
         self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_2)
+        self.ui.btn2.set_active(True)
 
 
     def show_page_3(self):
         """
         """
         print("clickado 3")
+        self.reset_selection()
         self.ui.pages.setCurrentWidget(self.ui.ui_pages.page_3)
+        self.ui.btn3.set_active(True)
 
     def toggle_barra(self):
         """

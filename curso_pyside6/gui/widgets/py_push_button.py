@@ -130,3 +130,15 @@ class PyPushButton(QPushButton):
         )
         painter.end()
         return None
+
+
+    def set_active(self, is_active_menu):
+        self.set_style_b(
+        text_padding = self.text_padding,
+        text_color = self.text_color,
+        btn_color = self.btn_color,
+        btn_hover = self.btn_hover,
+        btn_pressed = self.btn_pressed,
+        is_active = is_active_menu
+        )
+        return None

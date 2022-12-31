@@ -34,8 +34,18 @@ class MainWindow(QMainWindow):
         # Boton p3
         self.ui.btn3.clicked.connect(self.show_page_3)
 
+
+        # Cambia texto
+        self.ui.ui_pages.btn_alteraTexto.clicked.connect(self.change_text)
+
         # Visuliza ventana
         self.show()
+
+
+    def change_text(self):
+        texto = self.ui.ui_pages.lineEdit.text()
+        nuevo_texto = 'Hola ' + texto
+        self.ui.ui_pages.label_3.setText(nuevo_texto)
 
 
     def reset_selection(self):

@@ -35,12 +35,25 @@ class MainWindow(QMainWindow):
         self.ui.btn3.clicked.connect(self.show_page_3)
 
 
+        # Boton de cierre
+        btn_quit = QPushButton('Salir', self)
+        btn_quit.clicked.connect(QApplication.instance().quit)
+        btn_quit.resize(btn_quit.sizeHint())
+        btn_quit.move(90,100)
+
         # Cambia texto
         self.ui.ui_pages.btn_alteraTexto.clicked.connect(self.change_text)
 
         # Visuliza ventana
         self.show()
 
+
+    def closeEvent(self, event: QCloseEvent):
+        reply = QMessageBox.question(self, 'Mensaje', '¿Quiere cerrar la aplicación?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
 
     def change_text(self):
         texto = self.ui.ui_pages.lineEdit.text()
